@@ -1,0 +1,7 @@
+classes= 25
+train  = /home/kwokshungit/jav/train.txt
+valid = /home/kwokshungit/jav/val.txt
+names = data/jav.names
+backup = backup
+eval=coco
+
