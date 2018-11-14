@@ -1,9 +1,9 @@
 from darknet import Darknet
 
 net = (
-    'cfg/openimages.data',
-    'cfg/yolov3-openimages.cfg',
-    'openimages.weights'
+    'cfg/jav.data',
+    'cfg/jav.cfg',
+    'backup/jav.weights'
 )
 
 if __name__ == "__main__":
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         with open(l_fn, 'w') as lb:
             for c, i, b in sorted(dn(fn), reverse=True):
                 # print('\t%s (%.3f)' % (dn.name(i), c))
-                print('%d %s' % (i, ' '.join('%.6f' % p for p in b)), file=lb)
+                print('%.2f %d %s' % (c, i, ' '.join('%.6f' % p for p in b)), file=lb)
         now = perf_counter()
         tinfo = '%2.3fs (%.1f/s)' % (now - t, sn / (now - start))
         print('\r%-12s| %-60s| %-10s' % (cinfo, t_fn, tinfo), end='')
